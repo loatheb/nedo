@@ -5,6 +5,6 @@ node CommonJS enhancer, load module from url
 
 ```js
 const r = require('r');
-r('http://raw.githubusercontent.com/loatheb/require-enhancer/master/__test/case/code.js') // 1
+r('https://raw.githubusercontent.com/loatheb/require-enhancer/master/__test/case/code.js') // 1
 
 ```
