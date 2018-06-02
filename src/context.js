@@ -8,10 +8,10 @@ function createNewContext() {
     setInterval,
     setTimeout,
     console,
-    process,
-  }
-  sandbox.global = sandbox
-  return sandbox
+    process
+  };
+  sandbox.global = sandbox;
+  return sandbox;
 }
 
-module.exports = createNewContext()
+module.exports = createNewContext();
