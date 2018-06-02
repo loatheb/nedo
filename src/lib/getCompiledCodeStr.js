@@ -1,35 +1,41 @@
-const axios = require("axios");
 const { readFileSync } = require("fs");
 const { resolve } = require("path");
+const request = require("sync-request");
 
 const utils = require("../utils");
 
-function getCodeStr({ path }) {
+function getCodeStr(fileMeta, cb) {
+  const path = fileMeta.path;
+
   if (utils.isUrl(path)) {
-    return axios.get(path).then(res => {
-      return res.data;
-    });
+    const res = request("GET", path);
+    const code = res.getBody().toString();
+    return cb({ ...fileMeta, code });
+  } else {
+    const processCwd = [...process.argv];
+    const pathToFile = processCwd.pop().split("/");
+    const bootstrapFilename = pathToFile.pop();
+
+    const code = readFileSync(resolve(pathToFile.join("/"), path), "utf-8");
+
+    return cb({ ...fileMeta, code });
   }
-
-  const processCwd = [...process.argv];
-  const pathToFile = processCwd.pop().split("/");
-  const bootstrapFilename = pathToFile.pop();
-
-  return readFileSync(resolve(pathToFile.join("/"), path), "utf-8");
 }
 
-function compileCodeStr(fileMeta) {
-  const ext = fileMeta.ext;
-  const extWhiteList = ["js", "es6"];
-  if (!ext || extWhiteList.includes(ext)) {
-    return fileMeta;
-  }
-  const compiler = require(`./compile/${ext}`);
-  const code = compiler(fileMeta);
+function compileCodeStr(cb) {
+  return function(fileMeta) {
+    const ext = fileMeta.ext;
+    const extWhiteList = ["js", "es6"];
+    if (!ext || extWhiteList.includes(ext)) {
+      return cb(fileMeta);
+    }
+    const compiler = require(`./compile/${ext}`);
+    const code = compiler(fileMeta);
 
-  return {
-    ...fileMeta,
-    code
+    return cb({
+      ...fileMeta,
+      code
+    });
   };
 }
 
@@ -47,8 +53,7 @@ function resolveFileMeta(file) {
   };
 }
 
-module.exports = async function getCompiledCodeStr(file) {
+module.exports = function getCompiledCodeStr(file, cb) {
   const fileMeta = resolveFileMeta(file);
-  const code = await getCodeStr(fileMeta);
-  return compileCodeStr({ ...fileMeta, code });
+  return getCodeStr(fileMeta, compileCodeStr(cb));
 };
