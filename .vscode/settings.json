@@ -1,0 +1,5 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveTimeout": 500,
+  "javascript.validate.enable": false
+}
