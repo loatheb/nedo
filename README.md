@@ -24,6 +24,19 @@ const res = r("./code.ts");
 console.log(res); // hello code.ts
 ```
 
+- top level await
+
+```js
+// index.js
+const r = require("nedo");
+
+r("./code.js");
+
+// code.js: here you don't need wrap it into async function...
+const res = await doSomeAsyncThings();
+console.log('logFromTopLevelAwait', res);
+```
+
 ### testcase
 
 for much more detaile information can see the test case [\_\_test/index.js](https://github.com/loatheb/nedo/blob/master/__test/index.js)
