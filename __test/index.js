@@ -8,3 +8,5 @@ console.log("codeFromRemote", codeFromRemote);
 
 const tsCode = r("./case/code.ts");
 console.log("tsCode", tsCode);
+
+r("./case/code3.js");
