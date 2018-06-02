@@ -1,6 +1,6 @@
-# require-enhancer
+# NEDO
 
-node CommonJS enhancer, load module from url or TS
+Node CommonJS require enhancer, could load module from url or ts at runtime ...
 
 ### usage
 
