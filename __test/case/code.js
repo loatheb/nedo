@@ -1,2 +1,2 @@
-var a = 1;
-console.log(a);
+const str = "hello code.js";
+module.exports = str;
