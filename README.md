@@ -16,7 +16,7 @@ r(
 });
 ```
 
-load module from ts file
+- load module from ts file
 
 ```js
 const r = require("nedo");
