@@ -28,4 +28,4 @@ console.log(res); // hello code.ts
 
 for much more detaile information can see the test case [\_\_test/index.js](https://github.com/loatheb/nedo/blob/master/__test/index.js)
 
-[https://github.com/loatheb/nedo/blob/master/screenshot/testcase.js](https://github.com/loatheb/nedo/blob/master/screenshot/testcase.js)
+![https://github.com/loatheb/nedo/blob/master/screenshot/testcase.jpg](https://github.com/loatheb/nedo/blob/master/screenshot/testcase.jpg)
