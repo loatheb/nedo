@@ -4,7 +4,8 @@
   "description": "support Node CommonJS load a module from url",
   "main": "index.js",
   "scripts": {
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "test": "node __test/index.js"
   },
   "keywords": [
     "CommonJS",
