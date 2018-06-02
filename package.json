@@ -2,14 +2,31 @@
   "name": "require-enchancer",
   "description": "support Node CommonJS load a module from url",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "precommit": "lint-staged"
+  },
   "keywords": [
     "CommonJS",
-    "Node"
+    "node",
+    "nodejs",
+    "require"
   ],
-  "author": "loatheb <loatheb.gmail.com>",
+  "author": "loatheb <loatheb.zhao@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/preset-typescript": "^7.0.0-beta.49",
     "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^7.1.3",
+    "prettier": "1.13.4"
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
