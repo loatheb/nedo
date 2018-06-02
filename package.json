@@ -1,5 +1,6 @@
 {
-  "name": "require-enchancer",
+  "name": "nedo",
+  "version": "0.0.1",
   "description": "support Node CommonJS load a module from url",
   "main": "index.js",
   "scripts": {
