@@ -1,0 +1,15 @@
+{
+  "name": "require-enchancer",
+  "description": "support Node CommonJS load a module from url",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "CommonJS",
+    "Node"
+  ],
+  "author": "loatheb <loatheb.gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
