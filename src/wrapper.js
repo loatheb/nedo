@@ -8,6 +8,8 @@ const asyncWrapper = ["(async function() { \n", "\n})();"];
 module.exports = function wrap(script) {
   return `
     ${generalWrapper[0]}
+    ${asyncWrapper[0]}
     ${script}
+    ${asyncWrapper[1]}
     ${generalWrapper[1]}`;
 };
