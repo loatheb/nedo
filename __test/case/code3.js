@@ -5,4 +5,3 @@ function sleep(sec) {
 }
 
 const res = await sleep(2);
-console.log('logFromTopLevelAwait', res);
