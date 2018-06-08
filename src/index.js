@@ -2,8 +2,9 @@ const vm = require("vm");
 
 const context = require("./context");
 const wrap = require("./wrapper");
-const getCompiledCodeStr = require("./lib/getCompiledCodeStr");
 const utils = require("./utils");
+
+const getCompiledCodeStr = require("./lib/getCompiledCodeStr");
 
 const m = {
   exports: {}
