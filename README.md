@@ -13,7 +13,7 @@ Node CommonJS require enhancer, could load module from url or ts at runtime ...
 const r = require("nedo");
 
 const res = r(
-  "https://raw.githubusercontent.com/loatheb/require-enhancer/master/__test/case/code.js"
+  "https://raw.githubusercontent.com/loatheb/nedo/master/__test/case/code.js"
 );
 console.log(res); // hello code.js
 ```
@@ -35,13 +35,13 @@ const r = require("nedo");
 
 r("./code.js");
 
-// code.js: here you don't need wrap it into async function...
-const res = await doSomeAsyncThings();
-console.log('logFromTopLevelAwait', res);
+
+// code.js: you don't need wrap await into async a function...
+await doSomeAsyncThings();
 ```
 
 ### testcase
 
-for much more detaile information can see the test case [\_\_test/index.js](https://github.com/loatheb/nedo/blob/master/__test/index.js)
+you can touch the testcase [\_\_test/index.js](https://github.com/loatheb/nedo/blob/master/__test/index.js) for much more detail.
 
 ![https://github.com/loatheb/nedo/blob/master/screenshot/testcase.jpg](https://github.com/loatheb/nedo/blob/master/screenshot/testcase.jpg)
