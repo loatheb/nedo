@@ -11,5 +11,6 @@ module.exports = function wrap(script) {
     ${asyncWrapper[0]}
     ${script}
     ${asyncWrapper[1]}
-    ${generalWrapper[1]}`;
+    ${generalWrapper[1]}
+  `;
 };
