@@ -5,6 +5,9 @@ Node 端 CommonJS 规范增强版，支持运行时从 url 和 ts 文件加载�
 [![Build Status](https://travis-ci.org/loatheb/nedo.svg?branch=master)](https://travis-ci.org/loatheb/nedo)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
+[[English doc](https://github.com/loatheb/nedo/blob/master/README.md)]
+[[中文文档](https://github.com/loatheb/nedo/blob/master/README-CN.md)]
+
 ### 示例
 
 - 从 url 加载一个 CommonJS 模块
